@@ -58,6 +58,7 @@ function PostItem({ post }: PropsType) {
               width: "100%",
               height: "auto",
             }}
+            priority={true}
           />
         </ImageDiv>
         <Content>

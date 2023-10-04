@@ -16,16 +16,21 @@ function useContact() {
       },
     });
 
-    let error;
-    let data;
+    const resData: {
+      data: { message: string; newMessage?: {} };
+      error: string | null;
+    } = {
+      data: { message: "" },
+      error: null,
+    };
     if (!res.ok) {
       const errData = await res.json();
-      error = errData.message || "Something went wrong...";
+      resData.error = errData.message || "Something went wrong...";
     } else {
-      data = await res.json();
+      resData.data = await res.json();
     }
     setIsLoading(false);
-    return { error, data };
+    return { resData };
   }
 
   return { sendMessage, isLoading };

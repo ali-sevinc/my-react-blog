@@ -1,51 +1,22 @@
-import ReactMarkdown from "react-markdown";
-
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-
-import styled from "styled-components";
-import Header from "./Header";
-
-import { Post as PostType } from "@/helpers/types";
 import Image from "next/image";
 
-const Container = styled.article`
-  width: 60%;
-  background-color: var(--color-gray-800);
-  margin: var(--size-2xl) auto 0 auto;
-  padding: var(--size-2xl) var(--size-xl);
-  color: var(--color-orange-100);
-  border-radius: var(--size-sm);
+import ReactMarkdown from "react-markdown";
 
-  @media (max-width: 768px) {
-    width: 80%;
-  }
-  @media (max-width: 640px) {
-    width: 90%;
-  }
+import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter";
+import atomDark from "react-syntax-highlighter/dist/cjs/styles/prism/atom-dark";
+import jsx from "react-syntax-highlighter/dist/cjs/languages/prism/jsx";
+import js from "react-syntax-highlighter/dist/cjs/languages/prism/javascript";
+import css from "react-syntax-highlighter/dist/cjs/languages/prism/css";
 
-  h2 {
-    font-size: var(--size-2xl);
-    margin-bottom: var(--size-lg);
-  }
-  h3 {
-    font-size: var(--size-xl);
+import { Post as PostType } from "@/helpers/types";
+import styled from "styled-components";
 
-    margin-bottom: var(--size-md);
-  }
+import Header from "./Header";
+import { Container } from "../../ui/Detail";
 
-  p {
-    font-size: var(--size-lg);
-    padding: var(--size-xs);
-  }
-  a {
-    text-decoration: underline;
-  }
-
-  a:hover {
-    color: var(--color-orange-500);
-  }
-`;
+SyntaxHighlighter.registerLanguage("jsx", jsx);
+SyntaxHighlighter.registerLanguage("js", js);
+SyntaxHighlighter.registerLanguage("css", css);
 
 const ImageContainer = styled.div`
   width: 70%;
@@ -77,7 +48,6 @@ function Post({ post }: { post: PostType }) {
               width={600}
               height={600}
               style={{ width: "100%", height: "auto" }}
-              priority
             />
           </ImageContainer>
         );

@@ -48,8 +48,8 @@ function ContactForm() {
     toast.info("Sending Message", {
       icon: <Loader />,
     });
-    const { data, error } = await sendMessage(values);
-
+    const { resData } = await sendMessage(values);
+    const { data, error } = resData;
     if (!error) {
       toast.dismiss();
       setValues(initialState);
@@ -69,7 +69,7 @@ function ContactForm() {
 
   return (
     <Container>
-      <h1>Sorunuzu iletin.</h1>
+      <h1>Soru gönder</h1>
       {isError && (
         <ErrorMessage>
           Geçeriz email, isim ya da mesaj. Lütfen girdiğiniz verileri tekrar
@@ -121,14 +121,23 @@ function ContactForm() {
         </Actions>
       </Form>
 
-      {ReactDOM.createPortal(
+      {typeof window !== "undefined" ? (
+        ReactDOM.createPortal(
+          <ToastContainer
+            autoClose={3000}
+            position="top-center"
+            hideProgressBar={false}
+            newestOnTop={true}
+          />,
+          document.getElementById("toastly")!
+        )
+      ) : (
         <ToastContainer
           autoClose={3000}
           position="top-center"
           hideProgressBar={false}
           newestOnTop={true}
-        />,
-        document.getElementById("toastly")!
+        />
       )}
     </Container>
   );

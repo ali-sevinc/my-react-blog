@@ -1,8 +1,8 @@
 ---
 title: "ReactJS'e İlk Bakış"
-slug: "ilk-bakis"
+slug: "react-ilk-bakis"
 date: "2023-2-1"
-image: "ilk-bakis.png"
+image: "react-ilk-bakis.png"
 excerpt: "ReactJS, Facebook tarafından geliştirilen ve kullanıcı arayüzleri (UI) oluşturmak için kullanılan açık kaynaklı bir JavaScript kütüphanesidir. React, web uygulamaları geliştirmek için özellikle kullanıcı arayüzünün bileşen tabanlı ve etkileşimli (Reaktif) bir şekilde oluşturulmasına odaklanır."
 isFeatured: true
 ---

@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root{   
-    --color-white:#fff;
+    --color-light:#fff;
 
     --color-gray-50:#fafafa;
     --color-gray-100:#f5f5f5;
@@ -56,7 +56,7 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 body {
