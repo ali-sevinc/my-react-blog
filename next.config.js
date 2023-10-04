@@ -9,6 +9,8 @@ const nextConfig = {
   },
 };
 
+module.exports = nextConfig;
+
 // import { PHASE_DEVELOPMENT_SERVER } from "next/constants";
 // module.exports = (pahase) => {
 //   if (pahase === PHASE_DEVELOPMENT_SERVER) {
