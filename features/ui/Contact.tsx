@@ -44,6 +44,7 @@ export const Control = styled.div`
     width: 100%;
     color: var(--color-gray-800);
     background-color: var(--color-orange-100);
+    padding: 0 var(--size-xs);
   }
 `;
 export const Area = styled.div`
@@ -57,6 +58,7 @@ export const Area = styled.div`
     width: 90%;
     color: var(--color-gray-800);
     background-color: var(--color-orange-100);
+    padding: 0 var(--size-xs);
   }
 `;
 
